@@ -1,0 +1,83 @@
+<button class="mode-button" (click)="changeMode()">
+  {{ mode | titlecase }} View
+</button>
+
+<ng-container
+  *ngTemplateOutlet="mode === 'card' ? cardItem : listItem"
+></ng-container>
+
+<!--card view-->
+<ng-template #cardItem>
+  <div class="main-container">
+    <ng-container *ngFor="let item of items">
+      <div class="card-container">
+        <span *ngIf="item.modelID % 3 === 0" class="pro">PRO</span>
+        <img
+          loading="lazy"
+          class="round-image"
+          onerror="this.src='https://www.seekpng.com/png/full/115-1150699_22-years-old-avatar.png';"
+          src="{{ item.profileImage }}"
+          alt="user"
+        />
+        <h3>{{ item.name }}</h3>
+        <h6>{{ item.gender }}</h6>
+        <p>Agency: {{ item.agencyProfile.agencyName }}</p>
+
+        <a
+          href="{{ item.agencyProfile.profileUrl }}"
+          target="_blank"
+          class="primary"
+        >
+          Visit {{ item.gender == "Female" ? "Her" : "His" }} Profile
+        </a>
+        <div class="skills">
+          <h6>Details</h6>
+          <ul>
+            <li *ngFor="let item of item.details | keyvalue">
+              <ng-template [ngIf]="item.value !== ' '">
+                {{ item.key | readable }}: {{ item.value }}
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>
+
+<!--table view-->
+<ng-template #listItem>
+  <div class="main-container">
+    <ng-container *ngFor="let item of items">
+      <div class="card-row">
+        <div class="image-col">
+          <img
+            class="round-image"
+            src="{{ item.profileImage }}"
+            alt="user"
+            loading="lazy"
+          />
+          <span *ngIf="item.modelID % 3 === 0" class="pro">PRO</span>
+        </div>
+        <div class="details-col">
+          <h4>{{ item.name }}</h4>
+          <h6>{{ item.gender }}</h6>
+          <p>Agency: {{ item.agencyProfile.agencyName }}</p>
+        </div>
+
+        <div class="details-col skills-row">
+          <ul>
+            <li *ngFor="let item of item.details | keyvalue">
+              <ng-template [ngIf]="item.value !== ' '">
+                {{ item.key | readable }}: {{ item.value }}
+              </ng-template>
+            </li>
+          </ul>
+          <a href="{{ item.agencyProfile.profileUrl }}" target="_blank"
+            >Visit {{ item.gender == "Female" ? "Her" : "His" }} Profile</a
+          >
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>

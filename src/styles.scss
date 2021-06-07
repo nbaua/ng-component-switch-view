@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+$base-color: #6d6a75;
+$card-background: #bfbdc1;
+$card-background-darker: #37323e;
+
+$card-foreground: #37323e;
+$element-foreground: #bfbdc1;
+$highlight-color: #de9e36;
+
+.mode-button {
+  background-color: $card-foreground;
+  color: $element-foreground;
+  border-radius: 5px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  padding: 3px 9px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 45%;
+  margin-right: 45%;
+}
+
+$image-dimension: 100px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $base-color;
+  font-family: Montserrat, sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.main-container {
+  max-width: 80vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.card-container {
+  background-color: $card-background;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: $card-foreground;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+  margin: 10pt;
+
+  .pro {
+    color: $card-foreground;
+    background-color: $highlight-color;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 7px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}
+
+.round-image {
+  border: 1px solid $card-foreground;
+  border-radius: 50%;
+  padding: 3px;
+  width: $image-dimension;
+  height: $image-dimension;
+}
+
+a.primary {
+  background-color: $card-foreground;
+  border-radius: 3px;
+  color: $element-foreground;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  padding: 5px 9px;
+  text-decoration: none;
+}
+
+.skills {
+  background-color: $card-background-darker;
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border: 1px solid $card-background;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      color: $element-foreground;
+      margin: 0 7px 7px 0;
+      padding: 7px;
+    }
+  }
+}
+
+/*ROW MODE*/
+.card-row {
+  background-color: $card-background-darker;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: $card-foreground;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  margin: 10pt;
+
+  .image-col {
+    background-color: $card-background;
+    width: 10%;
+    height: 100%;
+    float: left;
+    padding: 15pt;
+
+    img {
+      width: $image-dimension;
+      height: $image-dimension;
+    }
+
+    .pro {
+      color: $card-foreground;
+      background-color: $highlight-color;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 3px 7px;
+      position: absolute;
+      left: 90px;
+      top: 90px;
+    }
+  }
+  .details-col {
+    border-left: dashed 1px $card-background;
+    width: auto;
+    height: 100%;
+    color: $element-foreground;
+    min-width: 20%;
+    max-width: 70%;
+    padding: 20px;
+    float: left;
+
+    a {
+      color: $highlight-color;
+      font-size: 12px;
+      line-height: 25px;
+      text-decoration: none;
+    }
+
+    h4 {
+      margin: 9px 0;
+      color: $highlight-color;
+    }
+
+    h6 {
+      margin: 3px 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 11px;
+      line-height: 15px;
+    }
+  }
+}
+
+.skills-row {
+  background-color: $card-background-darker;
+  text-align: left;
+  padding: 15px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border: 1px solid $card-background;
+      border-radius: 3px;
+      display: inline-block;
+      color: $element-foreground;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;
+    }
+  }
+}
